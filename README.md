@@ -1,7 +1,7 @@
 Hybrid Tracking-Learning-Detection Library and the Application
-====
 
-================================Copyright==========================================
+=======================Copyright=======================
+
   Copyright 2013-2014 METU, Middle East Technical University, Informatics Institute
 
    This file is part of H-TLD.
@@ -18,14 +18,14 @@ Hybrid Tracking-Learning-Detection Library and the Application
 
    You should have received a copy of the GNU General Public License
    If not, see <http://www.gnu.org/licenses/>.
-====================================================================================
+=======================================================
 
 This README file is composed of two parts : 
   1. What is H-TLD?
   2. How can anyone set up H-TLD library?
 
-================================H-TLD Library=========================================
+=========================H-TLD Library=======================
 
 
 
-===================================Set-Up=============================================
+===========================Set-Up============================
