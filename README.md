@@ -78,7 +78,7 @@ Paths to their header and library files are defined with respect to the project'
 
 <h2>Usage</h2>
 
-<p>In order to realize the difference between serial and heterogenous implementations, the original serial code was not modified (except one improvement mentioned in "Notes" section). Only macros are defined to enable/disable H-TLD usage. If you want to harness H-TLD library, before you compile you should uncomment the line on where "#define USE_HTLD" is located in "TLDGlobals.h" file (in fact, this is the default option, when you download the solution).</p>
+<p>In order to realize the difference between serial and heterogeneous implementations, the original serial code was not modified (except one improvement mentioned in "Notes" section). Only macros are defined to enable/disable H-TLD usage. If you want to harness H-TLD library, before you compile you should uncomment the line on where "#define USE_HTLD" is located in "TLDGlobals.h" file (in fact, this is the default option, when you download the solution).</p>
 
 <p>In order to find out how the application is used; please see this link : https://github.com/gnebehay/OpenTLD.
 After you compile and link both projects (i.e. first build H-TLD, then the application), in the build folder you should see the dll and lib files for H-TLD and exe file for the application. When you run the executable along with the path to the configuration file(via command line), the tracking should commence.</p>
