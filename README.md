@@ -15,9 +15,9 @@
     GNU General Public License for more details.
    
     You should have received a copy of the GNU General Public License along 
-    with the one from Surrey University for TLD Algorithm developed by Zdenek Kalal
+    with the one from Surrey University for TLD Algorithm developed by Zdenek Kalal,
     and from Austrian Institute of Technology for C++ port coded by Georg Nebehay.
-    If not, see <http://www.gnu.org/licenses/>. Please contact Alptekin TEMİZEL for more 
+    If not, see <http://www.gnu.org/licenses/>. Please contact Alptekin TEMIZEL for more 
     info about licensing atemizel@metu.edu.tr.
 
 <h2>Introduction</h2>
@@ -47,7 +47,7 @@
 <h2>Installation Details</h2>
 
 <p>
-There is no specific installer for now. All you require (except the ones defined in "Systems Requirements" section) is Visual Studio for generating dll and executable files. All project specific files in uploaded solution were created by Visual Studio 2012. Please ensure that you installed NVIDIA Nsight, right after you'd installed Visual Studio IDE; otherwise your projects will not be detected as CUDA projects.<br/> 
+There is no specific installer for now. All you require (except the ones defined in "Systems Requirements" section) are Visual Studio, CUDA Toolkit and OpenCV for generating dll and executable files. All project specific files in uploaded solution were created by Visual Studio 2012. Please ensure that you installed NVIDIA Nsight, right after you'd installed Visual Studio IDE; otherwise your projects will not be detected as CUDA projects.<br/> 
 There are two separate projects in the solution : <br/>
 <ul>
  <li>One for H-TLD which produces dll and lib files.</li>
@@ -66,19 +66,30 @@ There are two additional 3rd party libraries and they are located under the fold
 </p>
 
 <p>
-Paths to their header and library files are defined with respect to the project's root folder (as well as the ones for H-TLD in order to run the application). However, for OpenCV repeat the steps given below for both projects :
+Paths to their header and library files are defined with respect to the project's root folder (including the one for H-TLD in order to run the application). However, for OpenCV repeat the steps given below for both projects :
 <ul>
  <li>Select the Project.</li>
  <li>Click on Project->Properties->Configuration Properties->C/C++->General->Additional Include Directories.</li>
  <li>Specify where the include folder for OpenCV Library is.</li>
  <li>Click on Project->Properties->Configuration Properties->Linker->General->Additional Library Directories.</li>
- <li>Specify where lib folder for OpenCV Library is. All Required library files are defined in Input sub-section.</li>
+ <li>Specify where lib folder for OpenCV Library is. All Required library files are already defined in Input sub-section.</li>
 </ul>
+</p>
+
+<p>
+ As for CUDA support : 
+ <ul>
+  <li>Select the Project for H-TLD.</li>
+  <li>Click on Project->Properties->Configuration Properties->CUDA C/C++->Common->Additional Include Directories.</li>
+  <li>You should specify where the include folder of CUDA Samples is located. For instance, in our case it is equal to "C:\ProgramData\NVIDIA Corporation\CUDA Samples\v6.0\common\inc" by default.</li>
+  <li>Click on Project->Properties->Configuration Properties->CUDA C/C++->Device->Code Generation.</li>
+  <li>You should specify compute capability and SM architecture versions to optimize your code in accord with the device you have. For us, they were both equal to 3.5</li>
+ </ul>
 </p>
 
 <h2>Usage</h2>
 
-<p>In order to realize the difference between serial and heterogeneous implementations, the original serial code was not modified (except one improvement mentioned in "Notes" section). Only macros are defined to enable/disable H-TLD usage. If you want to harness H-TLD library, before you compile you should uncomment the line on where "#define USE_HTLD" is located in "TLDGlobals.h" file (in fact, this is the default option, when you download the solution).</p>
+<p>In order to realize the difference between serial and heterogeneous implementations, the original serial code was not modified (except one improvement mentioned in "Notes" section). Only macros are defined to enable/disable H-TLD usage. If you want to harness H-TLD library; before you compile you should uncomment the line on where "#define USE_HTLD" is located in "TLDGlobals.h" file (in fact, this is the default option, when you download the solution).</p>
 
 <p>In order to find out how the application is used; please see this link : https://github.com/gnebehay/OpenTLD.
 After you compile and link both projects (i.e. first build H-TLD, then the application), in the build folder you should see the dll and lib files for H-TLD and exe file for the application. When you run the executable along with the path to the configuration file(via command line), the tracking should commence.</p>
@@ -91,7 +102,7 @@ After you compile and link both projects (i.e. first build H-TLD, then the appli
 </p>
 
 <p>
-Default Configuration File in ".\x64\Release" folder(config-sample.cfg) is set for medium resolution video frames by default.
+Configuration File in "$(SolutionDir)\x64\Release" folder(config-sample.cfg) is set for medium resolution video frames by default.
 </p>
 
 <h2>Notes</h2>
