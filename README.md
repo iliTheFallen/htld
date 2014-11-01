@@ -102,7 +102,14 @@ After you compile and link both projects (i.e. first build H-TLD, then the appli
 </p>
 
 <p>
-Configuration File in "$(SolutionDir)\x64\Release" folder(config-sample.cfg) is set for medium resolution video frames by default.
+Configuration File in "$(SolutionDir)\x64\Release" folder(config-sample.cfg) is set for medium resolution video frames by default.<br/>
+To run the application : 
+<ul>
+ <li>Open a Command Line.</li>
+ <li>Change Directory to $(SolutionDir)\x64\Release.</li>
+ <li>Type "open_tld_app.exe .\config-sample.cfg".</li>
+ <li>Press on Enter.</li>
+</ul>
 </p>
 
 <h2>Notes</h2>
