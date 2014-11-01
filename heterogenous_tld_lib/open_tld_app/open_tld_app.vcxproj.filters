@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="header">
+      <UniqueIdentifier>{28942302-f9a0-413f-82cd-63488e8f916b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source">
+      <UniqueIdentifier>{2424453d-189c-4ada-a484-ff8aee4b5978}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="libtld\mftracker\BB.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="libtld\mftracker\BBPredict.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="libtld\mftracker\FBTrack.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="libtld\mftracker\Lk.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="libtld\mftracker\Median.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="libtld\mftracker\MedianFlowTracker.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="libtld\Clustering.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="libtld\DetectionResult.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="libtld\DetectorCascade.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="libtld\EnsembleClassifier.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="libtld\ForegroundDetector.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="libtld\IntegralImage.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="libtld\NNClassifier.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="libtld\NormalizedPatch.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="libtld\TLD.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="libtld\TLDUtil.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="libtld\VarianceFilter.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="main\Config.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="main\Gui.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="main\Main.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="main\Settings.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="main\Trajectory.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="TLDGlobals.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="imacq\ImAcq.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="PPatchGenerator.h">
+      <Filter>header</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="libtld\mftracker\BB.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="libtld\mftracker\BBPredict.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="libtld\mftracker\FBTrack.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="libtld\mftracker\Lk.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="libtld\mftracker\Median.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="libtld\mftracker\MedianFlowTracker.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="libtld\Clustering.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="libtld\DetectionResult.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="libtld\DetectorCascade.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="libtld\EnsembleClassifier.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="libtld\ForegroundDetector.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="libtld\NNClassifier.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="libtld\TLD.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="libtld\TLDUtil.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="libtld\VarianceFilter.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="main\Config.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="main\Gui.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="main\Main.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="main\Settings.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="main\Trajectory.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenTLD.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="imacq\ImAcq.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="PPatchGenerator.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

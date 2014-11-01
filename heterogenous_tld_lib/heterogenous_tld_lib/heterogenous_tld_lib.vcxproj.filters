@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="source">
+      <UniqueIdentifier>{056fed8a-9218-41de-91d3-fb92dd0b75af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="header">
+      <UniqueIdentifier>{fef18fae-52e6-44a2-87d1-20f1e6047fc4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="tld_object.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="utilities.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="master.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="dll_factory.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="global_declarations.hpp">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="tld_object.hpp">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="hetld_errors.hpp">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="utilities.hpp">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="hetld_macros.hpp">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="master.hpp">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="hetld_api.hpp">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="dll_factory.hpp">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="imodule.hpp">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="fast_tracking.cuh">
+      <Filter>header</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="mem_management.cuh">
+      <Filter>header</Filter>
+    </None>
+    <None Include="fast_detection.cuh">
+      <Filter>header</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="mem_management.cu">
+      <Filter>source</Filter>
+    </CudaCompile>
+    <CudaCompile Include="fast_detection.cu">
+      <Filter>source</Filter>
+    </CudaCompile>
+    <CudaCompile Include="fast_tracking.cu">
+      <Filter>source</Filter>
+    </CudaCompile>
+  </ItemGroup>
+</Project>
