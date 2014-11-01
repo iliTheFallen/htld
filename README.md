@@ -18,7 +18,7 @@
     with the one from Surrey University for TLD Algorithm developed by Zdenek Kalal,
     and from Austrian Institute of Technology for C++ port coded by Georg Nebehay.
     If not, see <http://www.gnu.org/licenses/>. Please contact Alptekin TEMIZEL for more 
-    info about licensing atemizel@metu.edu.tr.
+    info about licensing atemizel@metu.edu.tr, and/or Ilker GURCAN via github issues section.
 
 <h2>Introduction</h2>
 
