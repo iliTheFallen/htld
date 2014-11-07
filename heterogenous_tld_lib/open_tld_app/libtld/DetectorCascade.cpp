@@ -171,42 +171,98 @@ void DetectorCascade::cleanPreviousData()
  */
 void DetectorCascade::initWindowsAndScales()
 {
+	int scanAreaW;
+    int scanAreaH;
+	int w, h;
+	float scale;
+	int windowIndex = 0;
+	int scanAreaX   = 1; // It is important to start with 1/1, because the integral images aren't defined at pos(-1,-1) due to speed reasons
+    int scanAreaY   = 1;
+	int scaleIndex  = 0;
 
-    int scanAreaX = 1; // It is important to start with 1/1, because the integral images aren't defined at pos(-1,-1) due to speed reasons
-    int scanAreaY = 1;
-    int scanAreaW = imgWidth - 1;
-    int scanAreaH = imgHeight - 1;
-	int ssw, ssh;
-
-    int windowIndex = 0;
-
-    scales = new Size[maxScale - minScale + 1];
+	numWindows = 0;
+	scales     = new Size[maxScale - minScale + 1];
 #ifdef USE_HTLD
+	int numOfRows;
+	int i, j;
+	float x, y;
+	float ssw, ssh;
+	scanAreaW = imgWidth - 2;
+    scanAreaH = imgHeight - 2;
+	
 	if(numOfBBOXesPerSL)
 		delete[] numOfBBOXesPerSL;
 	if(numOfLRBPerSL)
 		delete[] numOfLRBPerSL;
 	numOfBBOXesPerSL = new int[maxScale - minScale + 1];
 	numOfLRBPerSL    = new int[maxScale - minScale + 1];
-#endif
 
-    numWindows = 0;
-
-    int scaleIndex = 0;
-
-    for(int i = minScale; i <= maxScale; i++)
-    {
-        float scale = pow(1.2, i);
-        int w = (int)objWidth * scale;
-        int h = (int)objHeight * scale;
-
+	for(int i = minScale; i <= maxScale; i++) {
+        scale = pow(1.2, i);
+        w     = (int)(objWidth * scale + 0.5);
+        h     = (int)(objHeight * scale + 0.5);
 		if(w < minSize || h < minSize || w > scanAreaW || h > scanAreaH) 
 			continue;
 
-        if(useShift)
-        {
+        if(useShift) {
             ssw = std::max<float>(1, std::min<float>(h * shift, w * shift));
             ssh = std::max<float>(1, h * shift);
+        } else {
+            ssw = 1.0;
+            ssh = 1.0;
+        }
+
+        scales[scaleIndex].width     = w;
+        scales[scaleIndex].height    = h;
+		numOfLRBPerSL[scaleIndex]    = (floorf((scanAreaW - w - scanAreaX) / ssw) + 1);
+		numOfBBOXesPerSL[scaleIndex] = numOfLRBPerSL[scaleIndex] * (floorf((scanAreaH - h - scanAreaY) / ssh) + 1);
+        scaleIndex++;
+		numWindows += (floorf((scanAreaW - w - scanAreaX) / ssw) + 1) * (floorf((scanAreaH - h - scanAreaY) / ssh) + 1);
+    }//End of for-Loop...
+
+	//Now Create Window Objects...
+	windows   = new int[TLD_WINDOW_SIZE * numWindows];
+	numScales = scaleIndex;
+	for(scaleIndex = 0; scaleIndex < numScales; scaleIndex++) {
+		w         = scales[scaleIndex].width;
+        h         = scales[scaleIndex].height;
+		numOfRows = numOfBBOXesPerSL[scaleIndex] / numOfLRBPerSL[scaleIndex];
+		y         = scanAreaY;
+		if(useShift) {
+			ssw = std::max<float>(1, std::min<float>(h * shift, w * shift));
+			ssh = std::max<float>(1, h * shift);
+		} else {
+			ssw = 1.0;
+			ssh = 1.0;
+		}//End of else-Block...
+		for(i = 0; i<numOfRows; i++) {
+			x = scanAreaX;
+			for(j = 0; j<numOfLRBPerSL[scaleIndex]; j++) {
+				int *bb = &windows[TLD_WINDOW_SIZE * windowIndex];
+                tldCopyBoundaryToArray<int>(x, y, w, h, bb);
+                bb[4] = scaleIndex;
+                windowIndex++;
+				x += ssw;//Advance to the Next Column...
+			}//End of Innermost-for-Loop...
+			y += ssh;//Advance to the Next Row...
+		}//End of Inner-for-Loop...
+	}//End of Outermost-for-Loop...
+#else
+	int ssw, ssh;
+	scanAreaW = imgWidth - 1;
+    scanAreaH = imgHeight - 1;
+
+	for(int i = minScale; i <= maxScale; i++)
+    {
+        scale = pow(1.2, i);
+        w = (int)objWidth * scale;
+        h = (int)objHeight * scale;
+        int ssw, ssh;
+
+        if(useShift)
+        {
+            ssw = max<float>(1, w * shift);
+            ssh = max<float>(1, h * shift);
         }
         else
         {
@@ -214,15 +270,14 @@ void DetectorCascade::initWindowsAndScales()
             ssh = 1;
         }
 
+        if(w < minSize || h < minSize || w > scanAreaW || h > scanAreaH) continue;
+
         scales[scaleIndex].width = w;
         scales[scaleIndex].height = h;
-#ifdef USE_HTLD
-		numOfLRBPerSL[scaleIndex]    = ceil((float)(scanAreaW - w + 1) / ssw);
-		numOfBBOXesPerSL[scaleIndex] = numOfLRBPerSL[scaleIndex] * ceil((float)(scanAreaH - h + 1) / ssh);
-#endif
+
         scaleIndex++;
 
-        numWindows += ceil((float)(scanAreaW - w + 1) / ssw) * ceil((float)(scanAreaH - h + 1) / ssh);
+        numWindows += floor((float)(scanAreaW - w + ssw) / ssw) * floor((float)(scanAreaH - h + ssh) / ssh);
     }
 
     numScales = scaleIndex;
@@ -231,15 +286,15 @@ void DetectorCascade::initWindowsAndScales()
 
     for(scaleIndex = 0; scaleIndex < numScales; scaleIndex++)
     {
-        int w = scales[scaleIndex].width;
-        int h = scales[scaleIndex].height;
+        w = scales[scaleIndex].width;
+        h = scales[scaleIndex].height;
 
         int ssw, ssh;
 
         if(useShift)
         {
-            ssw = std::max<float>(1, w * shift);
-            ssh = std::max<float>(1, h * shift);
+            ssw = max<float>(1, w * shift);
+            ssh = max<float>(1, h * shift);
         }
         else
         {
@@ -247,21 +302,20 @@ void DetectorCascade::initWindowsAndScales()
             ssh = 1;
         }
 
-		for(int y = scanAreaY; y + h <= scanAreaY + scanAreaH; y += ssh)
+        for(int y = scanAreaY; y + h <= scanAreaY + scanAreaH; y += ssh)
         {
-			for(int x = scanAreaX; x + w <= scanAreaX + scanAreaW; x += ssw)
+            for(int x = scanAreaX; x + w <= scanAreaX + scanAreaW; x += ssw)
             {
                 int *bb = &windows[TLD_WINDOW_SIZE * windowIndex];
                 tldCopyBoundaryToArray<int>(x, y, w, h, bb);
                 bb[4] = scaleIndex;
-
                 windowIndex++;
             }
         }
-
     }
-
-    assert(windowIndex == numWindows);
+#endif
+	assert(windowIndex == numWindows);
+	
 }
 
 //Creates offsets that can be added to bounding boxes
@@ -277,7 +331,6 @@ void DetectorCascade::initWindowOffsets()
 
     for(int i = 0; i < numWindows; i++)
     {
-
         int *window = windows + windowSize * i;
         *off++ = sub2idx(window[0] - 1, window[1] - 1, imgWidthStep); // x1-1,y1-1
         *off++ = sub2idx(window[0] - 1, window[1] + window[3] - 1, imgWidthStep); // x1-1,y2

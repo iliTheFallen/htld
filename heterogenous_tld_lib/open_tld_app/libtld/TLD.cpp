@@ -468,8 +468,8 @@ void TLD::learn()
 	bbW = hull[2] - hull[0] + 1;
 	bbH = hull[3] - hull[1] + 1;
 	cv::Rect roi(hull[0], hull[1], bbW, bbH);
-	//Move Blurred Image to CPU...
 #ifdef USE_HTLD
+	//Move Blurred Image to CPU...
 	cudaMemcpy((void*)imBlurred->data,
 			   (void*)memMgr->getDevBlurredCurFrame(),
 			   sizeof(Npp8u) * currImg.rows * currImg.cols,

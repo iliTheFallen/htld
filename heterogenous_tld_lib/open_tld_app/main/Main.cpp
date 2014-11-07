@@ -149,7 +149,6 @@ void Main::doWork()
     while(imAcqHasMoreFrames(imAcq))
     {
        
-
         if(!reuseFrameOnce)
         {
             cvReleaseImage(&img);
@@ -163,9 +162,8 @@ void Main::doWork()
 
             cvtColor(cvarrToMat(img), grey, CV_BGR2GRAY);
         }
-		
-		double tic = cvGetTickCount();
 
+		double tic = cvGetTickCount();
         if(!skipProcessingOnce)
         {
 			tld->processImage(cvarrToMat(img));
@@ -174,7 +172,6 @@ void Main::doWork()
         {
             skipProcessingOnce = false;
         }
-		
 		double toc = (cvGetTickCount() - tic) / cvGetTickFrequency();
 
         if(printResults != NULL)
@@ -188,7 +185,7 @@ void Main::doWork()
                 fprintf(resultsFile, "NaN,NaN,NaN,NaN,NaN\n");
             }
         }
-
+		
         toc = toc / 1000000;
 
         float fps = 1 / toc;
