@@ -1,0 +1,93 @@
+﻿Build started 14.06.2014 19:59:45.
+     1>Project "C:\cub-1.3.1\examples\device\vcxproj\CUDA60_example_device_scan.vcxproj" on node 2 (Build target(s)).
+     1>AddCudaCompileDeps:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\x86_amd64\cl.exe /E /nologo /showIncludes /TP /D__CUDACC__ /DWIN32 /DWIN64 /D_DEBUG /D_CONSOLE /D_MBCS /IC:\cub-1.3.1 /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\include" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\bin" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\include" /I. /FIcuda_runtime.h /c C:\cub-1.3.1\examples\device\example_device_scan.cu 
+       CudaBuild:
+         Compiling CUDA source file ..\example_device_scan.cu...
+         cmd.exe /C "C:\Users\pc\AppData\Local\Temp\tmpf2ad6aca9d0345b98fc728602a093884.cmd"
+         "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\bin\nvcc.exe" -gencode=arch=compute_35,code=\"sm_35,compute_35\" --use-local-env --cl-version 2012 -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\x86_amd64"  -I"C:\cub-1.3.1" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\include"  -G   --keep-dir x64\Debug -maxrregcount=0  --machine 64 --compile -cudart static  -g   -D"WIN32" -D"WIN64" -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /Zi /RTC1 /MDd  " -o x64\Debug\example_device_scan.cu.obj "C:\cub-1.3.1\examples\device\example_device_scan.cu"
+         
+         C:\cub-1.3.1\examples\device\vcxproj>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\bin\nvcc.exe" -gencode=arch=compute_35,code=\"sm_35,compute_35\" --use-local-env --cl-version 2012 -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\x86_amd64"  -I"C:\cub-1.3.1" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\include"  -G   --keep-dir x64\Debug -maxrregcount=0  --machine 64 --compile -cudart static  -g   -D"WIN32" -D"WIN64" -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /Zi /RTC1 /MDd  " -o x64\Debug\example_device_scan.cu.obj "C:\cub-1.3.1\examples\device\example_device_scan.cu" 
+         example_device_scan.cu
+     1>c:\cub-1.3.1\examples\device\../../test/test_util.h(209): warning C4267: 'return' : conversion from 'size_t' to 'int', possible loss of data
+     1>C:/cub-1.3.1/examples/device/example_device_scan.cu(91): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+     1>C:/cub-1.3.1/examples/device/example_device_scan.cu(92): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+     1>c:\cub-1.3.1\cub\block_range\../util_device.cuh(275): warning C4267: 'initializing' : conversion from 'size_t' to 'int', possible loss of data
+                 c:\cub-1.3.1\cub\device\dispatch/device_scan_dispatch.cuh(453) : see reference to function template instantiation 'cudaError_t cub::MaxSmOccupancy<void(__cdecl *)(InputIterator,OutputIterator,ScanTileState,ScanOp,Identity,Offset,cub::GridQueue<Offset>)>(int &,int,KernelPtr,int)' being compiled
+                 with
+                 [
+                     InputIterator=int *,
+                     OutputIterator=int *,
+                     ScanTileState=cub::ScanTileState<int>,
+                     ScanOp=cub::Sum,
+                     Identity=int,
+                     Offset=int,
+                     KernelPtr=void (__cdecl *)(int *,int *,cub::ScanTileState<int>,cub::Sum,int,int,cub::GridQueue<int>)
+                 ]
+                 c:\cub-1.3.1\cub\device\dispatch/device_scan_dispatch.cuh(539) : see reference to function template instantiation 'cudaError_t cub::DeviceScanDispatch<InputIterator,OutputIterator,ScanOp,Identity,Offset>::Dispatch<void(__cdecl *)(cub::GridQueue<Offset>,ScanTileState,int),void(__cdecl *)(InputIterator,OutputIterator,ScanTileState,ScanOp,Identity,Offset,cub::GridQueue<Offset>)>(void *,size_t &,InputIterator,OutputIterator,ScanOp,Identity,Offset,cudaStream_t,bool,int,ScanInitKernelPtr,ScanRegionKernelPtr,cub::DeviceScanDispatch<InputIterator,OutputIterator,ScanOp,Identity,Offset>::KernelConfig)' being compiled
+                 with
+                 [
+                     InputIterator=int *,
+                     OutputIterator=int *,
+                     ScanOp=cub::Sum,
+                     Identity=int,
+                     Offset=int,
+                     ScanTileState=cub::ScanTileState<int>,
+                     ScanInitKernelPtr=void (__cdecl *)(cub::GridQueue<int>,cub::ScanTileState<int>,int),
+                     ScanRegionKernelPtr=void (__cdecl *)(int *,int *,cub::ScanTileState<int>,cub::Sum,int,int,cub::GridQueue<int>)
+                 ]
+                 c:\cub-1.3.1\cub\device\dispatch/device_scan_dispatch.cuh(539) : see reference to function template instantiation 'cudaError_t cub::DeviceScanDispatch<InputIterator,OutputIterator,ScanOp,Identity,Offset>::Dispatch<void(__cdecl *)(cub::GridQueue<Offset>,ScanTileState,int),void(__cdecl *)(InputIterator,OutputIterator,ScanTileState,ScanOp,Identity,Offset,cub::GridQueue<Offset>)>(void *,size_t &,InputIterator,OutputIterator,ScanOp,Identity,Offset,cudaStream_t,bool,int,ScanInitKernelPtr,ScanRegionKernelPtr,cub::DeviceScanDispatch<InputIterator,OutputIterator,ScanOp,Identity,Offset>::KernelConfig)' being compiled
+                 with
+                 [
+                     InputIterator=int *,
+                     OutputIterator=int *,
+                     ScanOp=cub::Sum,
+                     Identity=int,
+                     Offset=int,
+                     ScanTileState=cub::ScanTileState<int>,
+                     ScanInitKernelPtr=void (__cdecl *)(cub::GridQueue<int>,cub::ScanTileState<int>,int),
+                     ScanRegionKernelPtr=void (__cdecl *)(int *,int *,cub::ScanTileState<int>,cub::Sum,int,int,cub::GridQueue<int>)
+                 ]
+                 c:\cub-1.3.1\cub\device\dispatch/device_scan_dispatch.cuh(522) : while compiling class template member function 'cudaError_t cub::DeviceScanDispatch<InputIterator,OutputIterator,ScanOp,Identity,Offset>::Dispatch(void *,size_t &,InputIterator,OutputIterator,ScanOp,Identity,Offset,cudaStream_t,bool)'
+                 with
+                 [
+                     InputIterator=int *,
+                     OutputIterator=int *,
+                     ScanOp=cub::Sum,
+                     Identity=int,
+                     Offset=int
+                 ]
+                 C:\cub-1.3.1\cub/device/device_scan.cuh(148) : see reference to function template instantiation 'cudaError_t cub::DeviceScanDispatch<InputIterator,OutputIterator,ScanOp,Identity,Offset>::Dispatch(void *,size_t &,InputIterator,OutputIterator,ScanOp,Identity,Offset,cudaStream_t,bool)' being compiled
+                 with
+                 [
+                     InputIterator=int *,
+                     OutputIterator=int *,
+                     ScanOp=cub::Sum,
+                     Identity=int,
+                     Offset=int
+                 ]
+                 c:\users\pc\appdata\local\temp\tmpxft_000013d0_00000000-2_example_device_scan.cudafe1.stub.c(6) : see reference to class template instantiation 'cub::DeviceScanDispatch<InputIterator,OutputIterator,ScanOp,Identity,Offset>' being compiled
+                 with
+                 [
+                     InputIterator=int *,
+                     OutputIterator=int *,
+                     ScanOp=cub::Sum,
+                     Identity=int,
+                     Offset=int
+                 ]
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\cub-1.3.1\examples\device\x64\Debug\CUDA60_example_device_scan.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\lib\x64" cudart.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\cub-1.3.1\examples\device\x64\Debug\CUDA60_example_device_scan.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\cub-1.3.1\examples\device\x64\Debug\CUDA60_example_device_scan.lib" /MACHINE:X64 x64\Debug\example_device_scan.cu.obj
+         CUDA60_example_device_scan.vcxproj -> C:\cub-1.3.1\examples\device\x64\Debug\CUDA60_example_device_scan.exe
+       PostBuildEvent:
+         echo copy "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\bin\cudart*.dll" "C:\cub-1.3.1\examples\device\x64\Debug\"
+         copy "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\bin\cudart*.dll" "C:\cub-1.3.1\examples\device\x64\Debug\"
+         :VCEnd
+         copy "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\bin\cudart*.dll" "C:\cub-1.3.1\examples\device\x64\Debug\"
+         C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\bin\cudart32_60.dll
+         C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\bin\cudart64_60.dll
+                 2 dosya kopyalandi.
+     1>Done Building Project "C:\cub-1.3.1\examples\device\vcxproj\CUDA60_example_device_scan.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:09.25

@@ -58,7 +58,7 @@ MemoryManagement::MemoryManagement(int f_width,
 	_d_roi           = (NppiSize*)malloc(sizeof(NppiSize));
 	_d_roi->height   = f_height;
 	_cv_cuda_stream  = accessor.getStream(_cv_stream);
-	//Check Out http://docs.opencv.org/modules/imgproc/doc/filtering.html#Mat getGaussianKernel(int ksize, double sigma, int ktype) for Why We Add +1...
+	//Check Out http://docs.opencv.org/modules/imgproc/doc/filtering.html#getgaussiankernel
 	_gaussian_filter_gpu = createGaussianFilter_GPU(CV_8UC1, 
 		                                            cv::Size((int)(6 * sigma) + 1, (int)(6 * sigma) + 1), 
 													sigma, 

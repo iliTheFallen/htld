@@ -1,0 +1,18 @@
+﻿Build started 14.06.2014 12:41:58.
+     1>Project "C:\Users\pc\Downloads\cub-1.3.1\examples\device\vcxproj\CUDA60_example_device_scan.vcxproj" on node 2 (Build target(s)).
+     1>AddCudaCompileDeps:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\cl.exe /E /nologo /showIncludes /TP /D__CUDACC__ /DWIN32 /D_DEBUG /D_CONSOLE /D_MBCS /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\include" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\bin" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\include" /I. /FIcuda_runtime.h /c C:\Users\pc\Downloads\cub-1.3.1\examples\device\example_device_scan.cu 
+       CudaBuild:
+         Compiling CUDA source file ..\example_device_scan.cu...
+         cmd.exe /C "C:\Users\pc\AppData\Local\Temp\tmp210a23f22d014940afdf851bcbf6c5e6.cmd"
+         "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2012 -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\include"  -G   --keep-dir Debug -maxrregcount=0  --machine 32 --compile -cudart static  -g   -D"WIN32" -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /Zi /RTC1 /MDd  " -o Debug\example_device_scan.cu.obj "C:\Users\pc\Downloads\cub-1.3.1\examples\device\example_device_scan.cu"
+         
+         C:\Users\pc\Downloads\cub-1.3.1\examples\device\vcxproj>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2012 -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\include"  -G   --keep-dir Debug -maxrregcount=0  --machine 32 --compile -cudart static  -g   -D"WIN32" -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /Zi /RTC1 /MDd  " -o Debug\example_device_scan.cu.obj "C:\Users\pc\Downloads\cub-1.3.1\examples\device\example_device_scan.cu" 
+     1>c:\users\pc\downloads\cub-1.3.1\cub\host/spinlock.cuh(39): fatal error C1083: Cannot open include file: 'windows.h': No such file or directory
+         example_device_scan.cu
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\BuildCustomizations\CUDA 6.0.targets(597,9): error MSB3721: The command ""C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2012 -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\include"  -G   --keep-dir Debug -maxrregcount=0  --machine 32 --compile -cudart static  -g   -D"WIN32" -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /Zi /RTC1 /MDd  " -o Debug\example_device_scan.cu.obj "C:\Users\pc\Downloads\cub-1.3.1\examples\device\example_device_scan.cu"" exited with code 2.
+     1>Done Building Project "C:\Users\pc\Downloads\cub-1.3.1\examples\device\vcxproj\CUDA60_example_device_scan.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.86
