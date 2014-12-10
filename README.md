@@ -57,10 +57,11 @@ There are two separate projects in the solution : <br/>
 </p>
 
 <p>
-There are two additional 3rd party libraries and they are located under the folder "3rdParties" : 
+There are three additional 3rd party libraries and they are located under the folder "3rdParties" : 
 <ul>
  <li><a href="http://www.hyperrealm.com/libconfig/">libconfig++</a></li>
  <li><a href="https://code.google.com/p/cvblob/">cvBlob</a></li>
+ <li><a href="http://nvlabs.github.io/cub/">cub from NVIDIA Research Lab</a></li>
 </ul>
 
 </p>
@@ -115,6 +116,7 @@ To run the application :
 <h2>Notes</h2>
 <p>
 <ul>
+ <li>Never Remove the "libconfig++.dll" file in x64\Release folder. It is not removed by Visual Studio automatically upon Clean; therefore no need to worry about whether it is going to be removed by the IDE.</li>
  <li>Keep in mind that a Tesla card was used during the test phase for it eliminates the overhead brought by display drivers like WDDM. This is valid for Windows Platforms only in the case you run H-TLD on Windows Vista and beyond. There might be some temporal solutions proposed on NVIDIA's web site to breach WDDM like drivers.</li>
  <li>As of yet, Qt4 support is not included.</li>
  <li>At the application level, only difference from Mr. Nebehay's serial implementation is that the image-warping right before training random fern classifier was added like it is in Zdenek Kalal's original Matlab implementation.</li>
