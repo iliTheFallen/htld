@@ -95,10 +95,11 @@ Paths to their header and library files are defined with respect to the project'
 <p>In order to find out how the application is used; please see this link : https://github.com/gnebehay/OpenTLD.
 After you compile and link both projects (i.e. first build H-TLD, then the application), in the build folder you should see the dll and lib files for H-TLD and exe file for the application. When you run the executable along with the path to the configuration file(via command line), the tracking should commence.</p>
 
-<p>Two different data sets are uploaded for testing. Folders are as follows : <br/>
+<p>Three different data sets are uploaded for testing. Folders are as follows : <br/>
 <ul>
  <li>water_bottle_low : Set of Frames for Low Resolution Video, 480x270.</li>
  <li>water_bottle_medium : Set of Frames for Medium Resolution Video, 960x540.</li>
+ <li>water_bottle_high : Set of Frames for High Resolution Video, 1920x1080.</li>
 </ul>
 </p>
 
