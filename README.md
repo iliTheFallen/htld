@@ -20,6 +20,10 @@
     If not, see <http://www.gnu.org/licenses/>. Please contact Alptekin TEMIZEL for more 
     info about licensing atemizel@metu.edu.tr, and/or Ilker GURCAN via github issues section.
 
+<b>Citation information:</b><br/>
+I.Gurcan, A.Temizel, “Heterogeneous CPU-GPU Tracking-Learning-Detection (H-TLD) for Real-Time Object Tracking”, Journal of Real-Time Image Processing, doi: XXXXX, 2015. 
+<a href="http://blog.metu.edu.tr/atemizel/files/2015/04/HTLD.pdf">Link to the Journal</a>
+
 <h2>Introduction</h2>
 
 <p>Tracking objects in a video stream is an important problem in robot learning (learning an object’s visual features from different perspectives as it moves, rotates, scales, and is subjected to some morphological changes such as erosion), defense, public security and many other various domains. In this thesis, we focus on a recently proposed tracking framework called TLD (Tracking-Learning-Detection). While having promising tracking results, the algorithm has high computational cost. The computational cost of the algorithm prevents running it at higher resolutions as well as running multiple instances of the algorithm to track multiple objects on CPU. In this thesis, we analyzed this framework with an aim to optimize it computationally on a CPU-GPU hybrid setting and developed a solution via using GP-GPU (General Purpose GPU) programming using Open-MP and CUDA. Our results show that 2.82 times speed-up at 480x270 resolution can be achieved. The speed-ups are higher at higher resolutions as expected in a massively parallel GPU platform, increasing to 10.25 times speed-up at 1920x1080 resolution. The resulting performance of the algorithm enables the algorithm to track multiple objects at higher frame rates in real-time and improving detection and tracking quality by allowing selection of configuration parameters requiring higher processing power.</p>
