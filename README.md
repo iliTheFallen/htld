@@ -22,7 +22,7 @@
 
 <b>Citation information:</b><br/>
 I.Gurcan, A.Temizel, “Heterogeneous CPU-GPU Tracking-Learning-Detection (H-TLD) for Real-Time Object Tracking”, Journal of Real-Time Image Processing, doi: XXXXX, 2015. 
-<a href="http://blog.metu.edu.tr/atemizel/files/2015/04/HTLD.pdf">Link to the Journal</a>
+<a href="http://blog.metu.edu.tr/atemizel/files/2015/04/HTLD.pdf">http://blog.metu.edu.tr/atemizel/files/2015/04/HTLD.pdf</a>
 
 <h2>Introduction</h2>
 

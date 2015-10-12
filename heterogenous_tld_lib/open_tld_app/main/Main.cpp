@@ -72,8 +72,6 @@ Main::~Main()
 
 void Main::doWork()
 {
-	float totalFPS = 0.0;
-	int count      = 0;
 	Trajectory trajectory;
     IplImage *img = imAcqGetImg(imAcq);
     Mat grey(img->height, img->width, CV_8UC1);
@@ -191,9 +189,6 @@ void Main::doWork()
         toc = toc / 1000000;
 
         float fps = 1 / toc;
-		//For Avg FPS Calc...
-		totalFPS += fps;
-		count++;
         
 		int confident = (tld->currConf >= threshold) ? 1 : 0;
 
@@ -347,7 +342,6 @@ void Main::doWork()
     {
         fclose(resultsFile);
     }
-	printf("Average FPS : %.2f\n", totalFPS);
 	//resetOutputStream();
 #ifdef USE_HTLD
 	//Destroy H-TLD...
