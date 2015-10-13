@@ -21,8 +21,7 @@
     info about licensing atemizel@metu.edu.tr, and/or Ilker GURCAN via github issues section.
 
 <b>Citation information:</b><br/>
-I.Gurcan, A.Temizel, “Heterogeneous CPU-GPU Tracking-Learning-Detection (H-TLD) for Real-Time Object Tracking”, Journal of Real-Time Image Processing, doi: XXXXX, 2015. 
-<a href="http://blog.metu.edu.tr/atemizel/files/2015/04/HTLD.pdf">http://blog.metu.edu.tr/atemizel/files/2015/04/HTLD.pdf</a>
+I.Gurcan, A.Temizel, <a href="http://blog.metu.edu.tr/atemizel/files/2015/04/HTLD.pdf">“Heterogeneous CPU-GPU Tracking-Learning-Detection (H-TLD) for Real-Time Object Tracking”</a>, Journal of Real-Time Image Processing, doi: 10.1007/s11554-015-0538-y, 2015
 
 <h2>Introduction</h2>
 
